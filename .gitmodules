@@ -1,0 +1,6 @@
+[submodule "src/submodules/gpstuff"]
+	path = src/submodules/gpstuff
+	url = https://github.com/gpstuff-dev/gpstuff.git
+[submodule "src/submodules/BrewerMap"]
+	path = src/submodules/BrewerMap
+	url = https://github.com/DrosteEffect/BrewerMap.git
