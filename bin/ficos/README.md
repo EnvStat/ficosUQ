@@ -37,7 +37,7 @@ This will launch the simulation using the default parametrisation and the output
 
 # License
 
-This pre-release of the FICOS water quality code is provided solely for the purposes of the publication of Kaurila et al. with the permission of FICOS developers and does not in any way limit or bind the authors of the FICOS code in regard to future official publication or licensing of the code. The FICOS code provided here can be freely used with the proper attribution (Syke/FICOS team).
+This pre-release of the FICOS water quality code is provided solely for the purposes of the publication of Kaurila et al. [https://arxiv.org/abs/2410.02448](https://arxiv.org/abs/2410.02448) with the permission of FICOS developers and does not in any way limit or bind the authors of the FICOS code in regard to future official publication or licensing of the code. The FICOS code provided here can be freely used with the proper attribution (Syke/FICOS team).
 
 The FICOS code will be officially released later (tentatively in 2025) by the FICOS team with proper documentation, licensing and attributions after some clean-up of the code. The core equations will not be affected by this process.
 
