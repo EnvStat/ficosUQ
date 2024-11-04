@@ -93,6 +93,8 @@ Python 3.8.10 as well as the above libraries are installed into a virtual enviro
 
 ## Data
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14028484.svg)](https://doi.org/10.5281/zenodo.14028484) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14028433.svg)](https://doi.org/10.5281/zenodo.14028433)
+
 The data used for calibrating FICOS is stored in two Zenodo repositories, 10.5281/zenodo.14028484 for the calibration data and 10.5281/zenodo.14028433 for the .hdf5 input files. All of the following files need to be placed in the ficosUQ/data folder:
 
 - intensiveStationsData.xlsx
@@ -100,5 +102,3 @@ The data used for calibrating FICOS is stored in two Zenodo repositories, 10.528
 - hd_files_ma_5.hdf5
 - loading.hdf5
 - loading_Aurajoki.hdf5
-
-
