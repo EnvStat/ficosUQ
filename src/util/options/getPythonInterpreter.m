@@ -1,4 +1,4 @@
-function [pyInterp] = getPythonInterpeter(options)
+function [pyInterp] = getPythonInterpreter(options)
     %GETPYTHONINTERPETER Get path to Python interpreter.
     %   pyInterp = getPythonInterpreter() Returns default path to python3
     %   interpreter needed for running this ficosUQ project's Python scripts.
@@ -8,7 +8,6 @@ function [pyInterp] = getPythonInterpeter(options)
     %   Copyright (c) 2017 - 2024 Karel Kaurila
     %
     arguments
-        options.projectRootName = 'ficosUQ';
         options.relInterpPath = 'src/python/pyEnv/venv/bin/python3';
         % require full path, otherwise return relative path
         options.fullPath {mustBeNumericOrLogical} = false;
@@ -16,12 +15,13 @@ function [pyInterp] = getPythonInterpeter(options)
 
     if options.fullPath
         [pwdRoot, pwdName, ~] = fileparts(pwd);
-        if ~strcmp(pwdName, options.projectRootName)
-            error(['getPythonInterpeter:Current working directory needs ' ...
-                'to be at project root. Expecting: %s, path is instead: %s'], ...
-                options.projectRootName, pwd);
-        end
         pyInterp = fullfile(pwdRoot, pwdName, options.relInterpPath);
+        if ~isfile(pyInterp)
+            error(['getPythonInterpreter:Invalid path: %s.\n' ...
+                'Make sure that python libaries are installed and ' ...
+                'that you are using this package from the project root folder.'], ...
+                pyInterp)
+        end
     else
         pyInterp = options.relInterpPath;
     end

@@ -1,3 +1,8 @@
+## Data files -----
+
+*.hdf5
+*.xlsx
+
 ## Compiled binaries -----
 
 # Fortran files

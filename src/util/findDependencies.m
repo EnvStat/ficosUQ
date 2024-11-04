@@ -7,6 +7,8 @@ function [depOut] = findDependencies(sourceFiles, options)
     % calibration script as follows.
     % >> string(getfield(findDependencies("mode",'local'),'files'))
     %
+    % If the ficosUQ
+    %
     % Copyright (c) 2017 - 2024 Karel Kaurila
     %
     arguments
@@ -24,6 +26,15 @@ function [depOut] = findDependencies(sourceFiles, options)
             'none';
         % include this function
         options.includeSelf {mustBeNumericOrLogical} = true;
+    end
+
+    currPath = pwd;
+    [~, currDir] = fileparts(currPath);
+    srcDir = fullfile(options.projectRoot, 'src');
+    if ~isfolder(srcDir)
+        error("Expecting to find folder %s. " + ...
+            "Try running this function with the named argument" + ...
+            "'projectRoot',''%s''.", currDir);
     end
 
     if options.includeSelf

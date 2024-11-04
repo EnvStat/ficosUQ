@@ -19,7 +19,7 @@ function [targetFilePath] = prepareHdFiles(options)
         % python3 interpeter command
         % use virtual environment by default
         options.pythonInterpreter {mustBeTextScalar} = ...
-            getPythonInterpeter('fullPath',true);
+            getPythonInterpreter('fullPath',true);
         options.pythonScriptName {mustBeTextScalar} = 'solar_ma.py';
         options.targetDir {mustBeFolder} = 'data/';
     end

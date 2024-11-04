@@ -1,0 +1,11 @@
+Download and extract the following files into this folder ('data'):
+
+- intensiveStationsData.xlsx
+- hd_files.hdf5
+- hd_files_ma_5.hdf5
+- loading.hdf5
+- loading_Aurajoki.hdf5
+
+These files can be downloaded from the following Zenodo repositories:
+- https://doi.org/10.5281/zenodo.14028483 (intensiveStationsData.xlsx)
+- https://doi.org/10.5281/zenodo.14028432 (.hdf5 files)

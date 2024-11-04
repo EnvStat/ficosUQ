@@ -2,17 +2,16 @@
 %
 % Launches gpstuff's own matlab_install script. This should be run from the 
 % project root folder or preferrably through the main installation script
-% ('ficosUQ/install.sh').
+% 'install.sh'.
 %
 % Copyright (c) 2017 - 2024 Karel Kaurila
 % See also src/submodules/gpstuff/matlab_install.m
 %
-rootDirName = 'ficosUQ';
 currPath = pwd;
 
 gpstuffPath = 'src/submodules/gpstuff/'; 
 installerFile = fullfile(gpstuffPath,'matlab_install.m');
-if ~isfolder(gpstuff)
+if ~isfolder(gpstuffPath)
     error(['gpstuff not found. ;ake sure this script is run from the ' ...
         'project root folder, now in:\n%s'], currPath);
 end
