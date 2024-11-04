@@ -1,0 +1,46 @@
+## Compiled binaries -----
+
+# Fortran files
+*.o
+*.mod
+*.hdf5
+# compiled simulator
+wqficos
+
+# Compiled hfd5 binaries (installed via install_hdf5_libraries.sh) 
+/bin/hdf5
+
+# Custom python installation and virtual environment
+# installed via python_install.sh
+/src/python/pyEnv
+
+# Compiled Python binary
+*.pyc
+
+## Matlab session data files ----
+*.mat
+*.asv
+
+# Matlab figure files
+*.fig
+
+# Input and output from FICOS calibration
+/input/
+/ficossettings*.txt
+/output/
+logs/
+logfile.txt
+
+# Archives
+*.zip
+*.gz
+*.tar.gz
+
+# Calibration and posterior predictive results
+results/
+
+# Matlab figures
+/figures
+
+
+

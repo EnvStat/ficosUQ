@@ -2,7 +2,7 @@ function [varargout] = ficosCalibration(calibrationOpt)
     %FICOSCALIBRATION Calibrate parameters for FICOS simulator.
     %   ficosCalibration() Calibrate FICOS simulator using the default options.
     %   The results, including posterior parameters samples, will be saved to
-    %   the to a folder under ficosUQ/results.
+    %   to a folder under results/.
     %
     %   Use the function 'calibrationOptions' to define the options. Many of
     %   the options can be tab-completed, such as the path to the hdf5 input

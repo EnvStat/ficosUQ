@@ -10,14 +10,14 @@ then
   git submodule update
 else
   # Not installed through git (e.g. through an archive in Zenodo)
-  # cloning the submodules instead and checking specific versions
+  # cloning the submodules instead and checking out specific versions
   cd src/submodules
   # gpstuff -------------------------------------
   git clone https://github.com/gpstuff-dev/gpstuff.git gpstuff
   cd gpstuff
   git checkout $gpstuffRef
   cd ..
-  
+
   # BrewerMap
   git clone https://github.com/DrosteEffect/BrewerMap.git BrewerMap
   cd BrewerMap
