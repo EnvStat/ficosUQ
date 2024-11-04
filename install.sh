@@ -1,15 +1,29 @@
 #!/bin/bash
 # main installation script
 
-
-# Update submodules
-# -----------------------------
-# Updates submodules to match what the main (superproject) expects.
-# Essentially ensures that external libraries from github are fixed to the commits that
-# are known to work in this project.
-# see 'man gitsubmodules(7)' and 'man git-submodule'
-git submodule init
-git submodule update
+# Setting up git submodules for gpstuff and BrewerMap ------
+gpstuffRef=114937ec0a201306489a66cbba38283e722fb998
+BrewerMapRef=1773eb111abe7db7a4197e09a53ca42e223f28eb
+if [ -d ".git" ]
+then
+  git submodule init
+  git submodule update
+else
+  # Not installed through git (e.g. through an archive in Zenodo)
+  # cloning the submodules instead and checking specific versions
+  cd src/submodules
+  # gpstuff -------------------------------------
+  git clone https://github.com/gpstuff-dev/gpstuff.git gpstuff
+  cd gpstuff
+  git checkout $gpstuffRef
+  cd ..
+  
+  # BrewerMap
+  git clone https://github.com/DrosteEffect/BrewerMap.git BrewerMap
+  cd BrewerMap
+  git checkout $BrewerMapRef
+  cd ../../..
+fi
 
 # Install matlab dependencies --------
 
@@ -27,10 +41,6 @@ if [ ! -f "bin/ficos/wqficos" ]; then
   make
   cd ../..
 fi
-
-# download hdf5 data -----
-# zenodo_get ...
-# ---
 
 
 # Install python virtual environment
