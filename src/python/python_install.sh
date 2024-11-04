@@ -72,6 +72,3 @@ $installCmd h5py==2.10.0
 # install numpy last, as installing h5py afterwards may lead to installing newer numpy
 $installCmd numpy==1.17.4
 
-
-
-

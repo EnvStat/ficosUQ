@@ -45,3 +45,6 @@ fi
 
 # Install python virtual environment
 src/python/python_install.sh
+
+# Download data from Zenodo
+src/python/download_data.sh

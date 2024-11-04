@@ -2,6 +2,8 @@
 
 *.hdf5
 *.xlsx
+# md5 checksums
+data/md5sums.txt
 
 ## Compiled binaries -----
 
