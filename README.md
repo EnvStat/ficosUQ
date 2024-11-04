@@ -1,5 +1,7 @@
 # ficosUQ
 
+This repository contains all the code needed to reproduce the calibration and uncertainty quantification of the Finnish Coastal Nutrient Load Model (FICOS) as described in [https://arxiv.org/abs/2410.02448](https://arxiv.org/abs/2410.02448) 
+
 ## Usage
 
 ### Setup 
