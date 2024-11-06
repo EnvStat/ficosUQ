@@ -44,7 +44,11 @@ logfile.txt
 *.tar.gz
 
 # Calibration and posterior predictive results
-results/
+results/*
+# but include example results:
+!results/calibration_example/
+results/calibration_example/*
+!results/calibration_example/calibration_results.mat
 
 # Matlab figures
 /figures
