@@ -13,7 +13,7 @@ function [tbPostPredSum, tbSamples] = postPredTimeseries(resultDir, options)
         options.computePostDens {mustBeNumericOrLogical} = true;
         options.plot {mustBeNumericOrLogical} = true;
         options.savePlot {mustBeNumericOrLogical} = false;
-        options.saveIntermResults {mustBeNumericOrLogical} = false;
+        options.saveIntermResults {mustBeNumericOrLogical} = true;
         options.showWarnings (1,1) {mustBeNumericOrLogical} = false;
     end
 
@@ -96,10 +96,16 @@ function [tbPostPredSum, tbSamples] = postPredTimeseries(resultDir, options)
 
     if options.saveIntermResults
         resultPath = fullfile(resultDir, 'postPredSummary.mat');
+        if isfile(resultPath)
+            % save to new file with timestamp if file already exists
+            [~, resFile, resExt] = fileparts(resultPath);
+            resFileNew = sprintf('%s_%s%s', resFile, getTimeStamp(), resExt);
+            resultPath = fullfile(resultDir, resFileNew);
+        end
         fprintf('Saving summary table to %s\n', resultPath);
         pltFun = 'plotPostPredTimeseries';
-        fprintf(['Result can be plotted with: \n' ...
-            '%s(%s)'], pltFun, resultPath);
+        fprintf(['Results can be plotted with: \n' ...
+            '%s(''%s'')'], pltFun, resultPath);
         save(resultPath, 'tbPostPredSum');
     end
 

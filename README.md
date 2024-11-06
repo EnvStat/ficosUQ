@@ -30,7 +30,9 @@ The version of FICOS being calibrated uses the disk quite heavily as it reads an
 
 The FICOS calibration script above will automatically sample from the posterior distribution for the simulator parameters. The samples will be saved in the `calibration_result.mat` file in the variables `ws_rt`. The posterior can be visualized with the function `plotPostJointMargDens`. When called without arguments, this will plot the example results in `results/calibration_example`. To plot different results, call this function with the path to the `calibration_results.mat` produced by the calibration script:
 
-`plotPostJointMargDens('<path_to_results_folder>/calibration_results.mat')`
+`plotPostJointMargDens('<path_to_results_folder>/calibration_results.mat')`.
+
+The figure plotted with the example results corresponds to Figure 3 in the [manuscript (preprint)](https://arxiv.org/abs/2410.02448).
 
 #### Posterior predictive simulations
 
@@ -44,8 +46,15 @@ After all posterior predictive simulations have finished, their results can be c
 
 `postPredTimeseries(postPredPath);`
 
-where `postPredPath` is the root folder for the posterior predictive simulation results. 
- 
+where `postPredPath` is the root folder for the posterior predictive simulation results.
+
+This function will also plot a figure for the summary. Once you have summarised results with `postPredTimeseries` and saved the summary to a file, such as `results/calibration_example/postPredSummary.mat`, you can produce the plots again with
+
+`plotPostPredTimeseries('results/calibration_example/postPredSummary.mat');`.
+
+This figure plotted with the above function corresponds to Figure 4 in [manuscript (preprint)](https://arxiv.org/abs/2410.02448).
+
+The example result file `results/calibration_example/postPredSummary.mat` will be included as a release asset on GitHub.
 
 ## Project structure
 

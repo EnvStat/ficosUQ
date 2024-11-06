@@ -45,8 +45,9 @@ arguments
     options.lwd (1,1) {mustBePositive} = 1.3;
     options.obsLwd (1,1) {mustBePositive} = 1.3;
     % observation marker sizes, non-censored and censored
-    options.obsMrkSz (1,1) {mustBePositive} = 4;
-    options.cenMrkSz (1,1) {mustBePositive} = 1;
+    options.obsMrkSz (1,1) {mustBePositive} = 9;
+    options.cenMrkSz (1,1) {mustBePositive} = 2;
+    options.cenMrkColor char = 'black';
     % Export (saving) options
     options.exportFigs (1,1) {mustBeNumericOrLogical} = false;
     options.expOpt struct = struct('dir', 'figures/');
@@ -64,7 +65,7 @@ arguments
     options.minGridLwd (1,1) {mustBeNumeric} = 0;
     options.labFntSz = 10;
     options.tckFntSz = 8;
-    options.alignYLabs (1,1) {mustBeNumericOrLogical} = true;
+    options.alignYLabs (1,1) {mustBeNumericOrLogical} = false;
     options.manualYlabPos {mustBeNumeric} = [];
     % y tick label alignment
     options.YlabHorzAlign = 'center';
@@ -204,7 +205,7 @@ optObsPoint = {'LineStyle','none','Marker','.','Color','red',...
 % Censored observations not marked right now
 optObsCensored = {'LineStyle','none',...
     'Marker','diamond',...
-    'MarkerFaceColor','magenta',...
+    'MarkerFaceColor',options.cenMrkColor,...
     'MarkerEdgeColor','none', 'MarkerSize', options.cenMrkSz};
 
 legOpts = {'Location', 'northwest','Box','on'...

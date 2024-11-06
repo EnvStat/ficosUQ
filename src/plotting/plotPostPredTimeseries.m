@@ -93,6 +93,9 @@ function [] = plotPostPredTimeseries(postPredResult,options)
             plotOpt.cenMrkSz = 4;
             plotOpt.intEdgeCol = 'none';
             plotOpt.obsEdgeCol = 'none';
+            plotOpt.minorTicks = true;
+            plotOpt.majorTicks = 'yearly';
+            plotOpt.centerXTkLab = true;
         case 'figSet2'
             plotOpt.obsIntervalVars = {};
             plotOpt.minorTicks = true;
@@ -113,6 +116,7 @@ function [] = plotPostPredTimeseries(postPredResult,options)
             plotOpt.minGridLwd = 0.5;
             plotOpt.obsMrkSz = 6;
             plotOpt.cenMrkSz = 1.5;
+            plotOpt.cenMrkColor = 'magenta';
             plotOpt.labFntSz = 9;
             plotOpt.tckFntSz = 7;
             plotOpt.alignYLabs = true;
