@@ -48,3 +48,6 @@ src/python/python_install.sh
 
 # Download data from Zenodo
 src/python/download_data.sh
+
+# Download example results from GitHub
+src/scripts/get_example_results.sh
