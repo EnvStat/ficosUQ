@@ -54,7 +54,7 @@ This function will also plot a figure for the summary. Once you have summarised 
 
 This figure plotted with the above function corresponds to Figure 4 in [manuscript (preprint)](https://arxiv.org/abs/2410.02448).
 
-The example result file `results/calibration_example/postPredSummary.mat` will be included as a release asset on GitHub.
+The example result file `results/calibration_example/postPredSummary.mat` is included as a release asset for [v1.0.2RC](https://github.com/kkaurila/ficosUQ/releases/tag/v1.0.2RC) and can be downloaded with the script `src/scripts/get_example_results.sh`.
 
 ## Project structure
 
