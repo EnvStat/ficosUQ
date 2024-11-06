@@ -43,10 +43,12 @@ function [] = plotPostPredTimeseries(postPredResult,options)
     end
 
     if strcmp(options.type, 'figSet1')
+        % Figure 4 in arXiv:2410.02448 [stat.ME]
         % Plot chla, A, FC, DIN1, DIP1
         plotOrder = {'chla', 'FC', 'A', 'DIN1', 'DIP1'};
         tbPPint(~ismember(tbPPint.variable, plotOrder),:) = [];
-
+        % Plot Utö:
+        tbPPint = tbPPint(tbPPint.wf_id==categorical(1900000089),:);
         % Plot years 2006 to 2009
         yearRange = [2006, 2009];
         tbPPint( year(tbPPint.Time) < yearRange(1), :) = [];

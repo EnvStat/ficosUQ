@@ -57,10 +57,6 @@ function [sigmas, yLatent] = sampleSigma(y, f, lb, prior, options)
     nCensored = sum(censored);
     kappa = kappa0*ones(nTotal,1);
     
-
-    
-    %PcensoredFcn = @(sig) rand(nCensored,1).*normcdf(alphaVec, muVec, sig);
-
     % Inverse CDF sampling for yLatent | sigma_i, y < lb
     muVec = f(censored);
     yLatFcn = @(sig) muVec + sig*...
@@ -72,15 +68,6 @@ function [sigmas, yLatent] = sampleSigma(y, f, lb, prior, options)
         sigmas(s) = sqrt(sinvchi2rand(nu, kappa(s)));
         % sample yLatent_s | sigma_s
         yLatent(censored, s) = yLatFcn(sigmas(s));
-        % with for loop
-        % for ii = 1:nCensored
-        %     % ICDF sampling for latent y
-        %     u = rand;
-        %     mu = f(indCensored(ii));
-        %     a = lb(indCensored(ii));
-        %     zLatent = norminv(u*normcdf((a-mu)/sigmas(s)));
-        %     yLatent(indCensored(ii), s) = mu + sigmas(s)*zLatent;
-        % end
     end
     % Discard initial value and burnin
     sigmas = sigmas((2+burnin):nTotal);

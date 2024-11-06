@@ -14,10 +14,17 @@ function [tbPostPredSum, tbSamples] = postPredTimeseries(resultDir, options)
         options.plot {mustBeNumericOrLogical} = true;
         options.savePlot {mustBeNumericOrLogical} = false;
         options.saveIntermResults {mustBeNumericOrLogical} = false;
+        options.showWarnings (1,1) {mustBeNumericOrLogical} = false;
+    end
+
+    if ~options.showWarnings
+        warnStruct = warning;
+        warning('off', 'MATLAB:table:ModifiedVarnamesUnstack');
     end
 
     %% Collect raw results
     
+
     tbPostPred = collectPostPredResults(resultDir, ...
         'vars', getSimOutNames('calibration'), ...
         'filtBlocks',filterBlocksArg('intens'));
@@ -98,8 +105,11 @@ function [tbPostPredSum, tbSamples] = postPredTimeseries(resultDir, options)
 
     %% Plotting
     if options.plot
-        plotPostPredTimeseries(tbPostPredSum, ...
-            'type','figSet2', 'save', options.savePlot);
+        plotPostPredTimeseries(tbPostPredSum, 'save', options.savePlot);
     end
 
+
+    if ~options.showWarnings
+        warning(warnStruct);
+    end
 end

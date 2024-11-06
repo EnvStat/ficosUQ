@@ -19,7 +19,7 @@ function [ficosOut] = postPredSimulations(options, parOpt, outputOpt)
     %
     arguments
         options.sampleFile {mustBeTextScalar} = ...
-            fullfile('results/calibration_example/calibration_result.mat');
+            fullfile('results/calibration_example/calibration_results.mat');
         options.nSamples (1,1) {mustBePositive, mustBeInteger} = 200;
         options.thinning (1,1) {mustBeNonnegative, mustBeInteger} = 30;
         % paths to simulator
