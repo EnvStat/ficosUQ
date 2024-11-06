@@ -70,7 +70,7 @@ arguments
     optExport.addTimeStamp {mustBeNumericOrLogical} = true;
     optExport.ext {mustBeText} = ...
         {'png','gif'};
-    optExport.dir {mustBeFolder} = 'figures/';
+    optExport.dir {mustBeTextScalar} = 'figures/';
     optExport.Resolution (1,1) {mustBePositive} = 600;
     % Pass through options from earlier function calls
     optExtra.passThrough struct = struct();
@@ -293,6 +293,9 @@ set(axParent, plotLayoutOpt{:});
 %% Exporting
 exportPath = '';
 if(options.exportFig)
+    if ~isfolder(optExport.dir)
+        mkdir(optExport.dir)
+    end
     exportArgs = struct2opt(optExport);
     exportPath = exportFig(figH, exportArgs{:});
 end

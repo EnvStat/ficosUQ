@@ -15,7 +15,7 @@ function [figH, exportPath] = plotPostJointMargDens(calRes, options, devOpt)
     %
     arguments
         calRes {mustBeFile} = ...
-            fullfile('results/calibration_example/calibration_result.mat');
+            fullfile('results/calibration_example/calibration_results.mat');
         options.exportFig {mustBeNumericOrLogical} = false;
         % Additional plotting options passed through to the plotting functions
         options.passThrough struct = struct();
