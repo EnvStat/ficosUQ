@@ -56,6 +56,24 @@ This figure plotted with the above function corresponds to Figure 4 in [manuscri
 
 The example result file `results/calibration_example/postPredSummary.mat` is included as a release asset for [v1.0.2RC](https://github.com/kkaurila/ficosUQ/releases/tag/v1.0.2RC) and can be downloaded with the script `src/scripts/get_example_results.sh`.
 
+#### Load reduction scenarios
+
+Load reduction scenarios, where catchment area nutrients loads are reduced by 20, 40, 60 and 80 percent can be launched with 
+
+`runCatchmentScenarios`.
+
+With default arguments this will use posterior samples from the example results, to use other calibration results or sampes, see `help runCatchmentScenarios`.
+
+Once all the simulations for the reduction scenarios have finished, the results can be collected and summarised with 
+
+`tbChlaSum = summariseChlaScenarios(resultDir)`,
+
+where `resultDir` is the folder containing predictions for all of the load reductions scenarios from `runCatchmentScenarios` . This folder should contain sub folders `scenario_1/`, `scenario_2/`, etc. which themselves contain predictions for each sample.
+
+Finally, the resulting summary table `tbChlaSum` can be plotted with `plotScenarioChlaDist(tbChlaSum)`.
+
+An example summary table is provided as a [release asset](https://github.com/kkaurila/ficosUQ/releases/download/v1.0.3/example_scenarioPredictionTable.mat).
+
 ## Project structure
 
 ### Outline
