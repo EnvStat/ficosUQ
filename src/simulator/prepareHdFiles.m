@@ -16,7 +16,7 @@ function [targetFilePath] = prepareHdFiles(options)
             'hd_files_ma_%d.hdf5';
         options.numDays (1,1) {mustBeNonnegative} = 0;
         options.pythonDir {mustBeFolder} = fullfile('src','python/');
-        % python3 interpeter command
+        % python3 interpreter command
         % use virtual environment by default
         options.pythonInterpreter {mustBeTextScalar} = ...
             getPythonInterpreter('fullPath',true);
