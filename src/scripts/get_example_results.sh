@@ -27,7 +27,7 @@ cd $exResDir
 if [ ! -f "$exPostPredFile" ];then
   wget $exPostPredUrl
 fi
-if [! -f "$exChlaSumFile" ];then
+if [ ! -f "$exChlaSumFile" ];then
   wget $exChlaSumUrl
 fi
 cd $prjRootDir
