@@ -31,7 +31,7 @@ load_types = {'intload', ... % Internal loading
               'sm'}; % Point loadings from Archipelago Sea (Saaristomeri)
 loads = ones(length(load_types),1);
 
-python_stem = getPythonInterpeter();
+python_stem = getPythonInterpreter();
 
 
 %% Parsing inputs
