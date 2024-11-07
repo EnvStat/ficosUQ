@@ -11,6 +11,9 @@ exFigDir=figures
 exResUrl=https://github.com/kkaurila/ficosUQ/releases/download/v1.0.2RC
 exPostPredFile=postPredSummary.mat
 exPostPredUrl=$exResUrl/$exPostPredFile
+# chla scenario summary
+exChlaSumFile=example_scenarioPredictionTable.mat
+exChlaSumUrl=https://github.com/kkaurila/ficosUQ/releases/download/v1.0.3/$exChlaSumFile
 
 exFig3File=example_jointPosterior.png
 exFig4File=example_postPred_Uto.png
@@ -23,6 +26,9 @@ exFig4Url=$exResUrl/$exFig4File
 cd $exResDir
 if [ ! -f "$exPostPredFile" ];then
   wget $exPostPredUrl
+fi
+if [! -f "$exChlaSumFile" ];then
+  wget $exChlaSumUrl
 fi
 cd $prjRootDir
 
