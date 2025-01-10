@@ -1,7 +1,7 @@
 # ficosUQ
 [![DOI](https://zenodo.org/badge/874713046.svg)](https://zenodo.org/badge/latestdoi/874713046)
 
-This repository contains all the code needed to reproduce the calibration and uncertainty quantification of the Finnish Coastal Nutrient Load Model (FICOS) as described in [https://arxiv.org/abs/2410.02448](https://arxiv.org/abs/2410.02448) 
+This repository contains all the code needed to reproduce the calibration and uncertainty quantification of the Finnish Coastal Nutrient Load Model (FICOS) as described in [https://doi.org/10.1016/j.ecoinf.2024.102976](https://doi.org/10.1016/j.ecoinf.2024.102976). 
 
 ## Usage
 
@@ -32,7 +32,7 @@ The FICOS calibration script above will automatically sample from the posterior 
 
 `plotPostJointMargDens('<path_to_results_folder>/calibration_results.mat')`.
 
-The figure plotted with the example results corresponds to Figure 3 in the [manuscript (preprint)](https://arxiv.org/abs/2410.02448).
+The figure plotted with the example results corresponds to Figure 3 in the [manuscript](https://doi.org/10.1016/j.ecoinf.2024.102976).
 
 #### Posterior predictive simulations
 
@@ -52,7 +52,7 @@ This function will also plot a figure for the summary. Once you have summarised 
 
 `plotPostPredTimeseries('results/calibration_example/postPredSummary.mat');`.
 
-This figure plotted with the above function corresponds to Figure 4 in [manuscript (preprint)](https://arxiv.org/abs/2410.02448).
+This figure plotted with the above function corresponds to Figure 4 in the [manuscript](https://doi.org/10.1016/j.ecoinf.2024.102976).
 
 The example result file `results/calibration_example/postPredSummary.mat` is included as a release asset for [v1.0.2RC](https://github.com/kkaurila/ficosUQ/releases/tag/v1.0.2RC) and can be downloaded with the script `src/scripts/get_example_results.sh`.
 
