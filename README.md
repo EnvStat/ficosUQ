@@ -1,7 +1,7 @@
 # ficosUQ
 [![DOI](https://zenodo.org/badge/874713046.svg)](https://zenodo.org/badge/latestdoi/874713046)
 
-This repository contains all the code needed to reproduce the calibration and uncertainty quantification of the Finnish Coastal Nutrient Load Model (FICOS) as described in [https://doi.org/10.1016/j.ecoinf.2024.102976](https://doi.org/10.1016/j.ecoinf.2024.102976). 
+This repository contains all the code for implementing the methods described in _Bayesian calibration and uncertainty quantification for a large nutrient load impact model_, published online in Ecological Informatics [https://doi.org/10.1016/j.ecoinf.2024.102976](https://doi.org/10.1016/j.ecoinf.2024.102976) (open access). 
 
 ## Usage
 
