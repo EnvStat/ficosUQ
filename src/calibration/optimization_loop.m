@@ -1,6 +1,6 @@
 %% OPTIMIZATION_LOOP Locate posterior mode with Bayes optimization.
-% optimization_loop Script for finding posterior mode using GP emulator and
-% Bayes optimization
+% optimization_loop Script for finding posterior mode using a GP emulator and
+% Bayesian optimization
 %
 % Copyright (c) 2013 - 2018 Jarno Vanhatalo
 % Copyright (c) 2017 - 2024 Karel Kaurila
@@ -158,13 +158,12 @@ while(iter <= params.itermin || ...
 
         maxEI = max(stdynm*abs(EI_all),[],"all");
         if(useLogOfLogPosterior)
-            disp(' Expected log minus log densities:')
-            disp((ey_new*stdynm+mynm)/p)
+            fprintf('Expected log minus log densities:\n')
         else
-            disp(' Expected negative log densities:')
-            disp((ey_new*stdynm+mynm).^(1/p))
+            fprintf('Expected negative log densities:\n')
         end
-        
+        disp(ey_new*stdynm+mynm)
+
         disp('Current minimum:')
         disp(ymin)
         disp(xmin)
@@ -304,5 +303,3 @@ while(iter <= params.itermin || ...
     end
 
 end
-
-
